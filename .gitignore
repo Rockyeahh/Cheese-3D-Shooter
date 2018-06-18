@@ -38,3 +38,5 @@ sysinfo.txt
 $ git add .gitignore
 $ git commit -m "node_modules removed"
 $ git push
+Cheese 3D Shooter Project/Cheese 3D Shooter/Assets/StarSparrow/SubstancePainter/StarSparrow.spp
+Cheese 3D Shooter Project/Cheese 3D Shooter/Assets/StarSparrow/SubstancePainter/StarSparrow.spp.meta
