@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityStandardAssets.CrossPlatformInput;
@@ -15,7 +16,19 @@ public class Player : MonoBehaviour {
 
 	}
 	
-	void Update () {
+	void Update ()
+    {
+        ProcessTranslation();
+        ProcessRotation();
+    }
+
+    private void ProcessRotation()
+    {
+        transform.localRotation = Quaternion.Euler(-17.116f, 90f, 0f);
+    }
+
+    private void ProcessTranslation()
+    {
         float xThrow = CrossPlatformInputManager.GetAxis("Horizontal"); // Throw is whether it is pushed in one direction or the other. So -horizontal or just horizontal.
         float yThrow = CrossPlatformInputManager.GetAxis("Vertical");
 
@@ -28,8 +41,7 @@ public class Player : MonoBehaviour {
         // float clampedYPos = Mathf.Clamp(rawYPos, -yRange, yRange); // Ben's code
 
         //transform.localPosition = new Vector3(clampedXPos, clampedYPos, transform.localPosition.z); // Ben's code
-        transform.localPosition = new Vector3 (Mathf.Clamp(rawXPos, -5f, 5f), transform.localPosition.y, transform.localPosition.z); // Moves the ship in x.
+        transform.localPosition = new Vector3(Mathf.Clamp(rawXPos, -5f, 5f), transform.localPosition.y, transform.localPosition.z); // Moves the ship in x.
         transform.localPosition = new Vector3(transform.localPosition.x, Mathf.Clamp(rawYPos, -5f, 0f), transform.localPosition.z); // Moves the ship in y.
     }
-
 }
