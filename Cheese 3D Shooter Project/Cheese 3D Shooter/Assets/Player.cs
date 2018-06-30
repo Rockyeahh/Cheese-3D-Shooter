@@ -11,6 +11,12 @@ public class Player : MonoBehaviour {
     //[Tooltip("In m")] [SerializeField] float xRange = 5f; // Ben's code
     //[Tooltip("in m")] [SerializeField] float yRange = 3f // Ben's code.
 
+     [SerializeField] float positionPitchFactor = -5f; // Ben's code. No idea what it is for.
+     [SerializeField] float controlPitchFactor = -20f; // Ben's code. Maybe it's to do with the ships nose pointing in directions.
+     [SerializeField] float positionYawFactor = 5f;
+     [SerializeField] float controlRollFactor = -20f;
+
+    float xThrow, yThrow;
 
 	void Start () {
 
@@ -24,13 +30,24 @@ public class Player : MonoBehaviour {
 
     private void ProcessRotation()
     {
-        transform.localRotation = Quaternion.Euler(-17.116f, 90f, 0f);
+        //float pitch = -17.116f;
+        float pitchDueToPosition = transform.localPosition.y * positionPitchFactor;
+        float pitchDueToControlThrow = yThrow * controlPitchFactor;
+        float pitch = pitchDueToPosition + pitchDueToControlThrow; // Fuck knows.
+        // Ben's code. No idea what it is for. // In Ben's video, it changes the x rotation when the ship moves up and down.
+
+
+        float yaw = transform.localPosition.x * positionYawFactor;
+        
+        float roll = xThrow * controlRollFactor;
+        
+        transform.localRotation = Quaternion.Euler(pitch, yaw, roll);
     }
 
     private void ProcessTranslation()
     {
-        float xThrow = CrossPlatformInputManager.GetAxis("Horizontal"); // Throw is whether it is pushed in one direction or the other. So -horizontal or just horizontal.
-        float yThrow = CrossPlatformInputManager.GetAxis("Vertical");
+        xThrow = CrossPlatformInputManager.GetAxis("Horizontal"); // Throw is whether it is pushed in one direction or the other. So -horizontal or just horizontal.
+        yThrow = CrossPlatformInputManager.GetAxis("Vertical");
 
         float xOffset = xThrow * speed * Time.deltaTime;               // xOffset is controls(xThrow) * speed * Time.deltaTime.
         float yOffset = yThrow * speed * Time.deltaTime;
