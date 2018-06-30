@@ -8,8 +8,8 @@ public class Player : MonoBehaviour {
 
     [Tooltip("In ms^-1")] [SerializeField] float speed = 20f; // Does the same as public but he likes using it throughout the 2.0 course. Set to 4f as a default.
                                                               // I don't know what ms^-1 means but I think it's a shorthand for the calculaion that we have done.
-    //[Tooltip("In m")] [SerializeField] float xRange = 5f; // Ben's code
-    //[Tooltip("in m")] [SerializeField] float yRange = 3f // Ben's code.
+    [Tooltip("In m")] [SerializeField] float xRange = 5f; // Ben's code
+    [Tooltip("in m")] [SerializeField] float yRange = 4.5f; // Ben's code. // It should be between 0f and 9f.
 
      [SerializeField] float positionPitchFactor = -5f; // Ben's code. No idea what it is for.
      [SerializeField] float controlPitchFactor = -20f; // Ben's code. Maybe it's to do with the ships nose pointing in directions.
@@ -58,7 +58,7 @@ public class Player : MonoBehaviour {
         // float clampedYPos = Mathf.Clamp(rawYPos, -yRange, yRange); // Ben's code
 
         //transform.localPosition = new Vector3(clampedXPos, clampedYPos, transform.localPosition.z); // Ben's code
-        transform.localPosition = new Vector3(Mathf.Clamp(rawXPos, -5f, 5f), transform.localPosition.y, transform.localPosition.z); // Moves the ship in x.
-        transform.localPosition = new Vector3(transform.localPosition.x, Mathf.Clamp(rawYPos, -5f, 0f), transform.localPosition.z); // Moves the ship in y.
+        transform.localPosition = new Vector3(Mathf.Clamp(rawXPos, -xRange, xRange), transform.localPosition.y, transform.localPosition.z); // Moves the ship in x.
+        transform.localPosition = new Vector3(transform.localPosition.x, Mathf.Clamp(rawYPos, -yRange, yRange), transform.localPosition.z); // Moves the ship in y.
     }
 }
