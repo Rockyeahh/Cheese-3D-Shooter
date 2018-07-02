@@ -9,9 +9,9 @@ public class Player : MonoBehaviour {
     [Tooltip("In ms^-1")] [SerializeField] float speed = 20f; // Does the same as public but he likes using it throughout the 2.0 course. Set to 4f as a default.
                                                               // I don't know what ms^-1 means but I think it's a shorthand for the calculaion that we have done.
     [Tooltip("In m")] [SerializeField] float xRange = 5f; // Ben's code
-    [Tooltip("in m")] [SerializeField] float yRange = 4.5f; // Ben's code. // It should be between 0f and 9f. Maybe it would be a slider.
+    [Tooltip("in m")] [SerializeField] float yRange = 4.5f; // Ben's code. // It should be between 0f and 9f. Maybe it should be a slider.
 
-     [SerializeField] float positionPitchFactor = -5f; // Ben's code. No idea what it is for.
+     [SerializeField] float positionPitchFactor = -5f; // Ben's code. The number is world units and this game they are meters.
      [SerializeField] float controlPitchFactor = -20f; // Ben's code. Maybe it's to do with the ships nose pointing in directions.
      [SerializeField] float positionYawFactor = 5f;
      [SerializeField] float controlRollFactor = -20f;
@@ -49,7 +49,7 @@ public class Player : MonoBehaviour {
         xThrow = CrossPlatformInputManager.GetAxis("Horizontal"); // Throw is whether it is pushed in one direction or the other. So -horizontal or just horizontal.
         yThrow = CrossPlatformInputManager.GetAxis("Vertical");
 
-        float xOffset = xThrow * speed * Time.deltaTime;               // xOffset is controls(xThrow) * speed * Time.deltaTime.
+        float xOffset = xThrow * speed * Time.deltaTime;               // xOffset is controls(xThrow) * speed * Time.deltaTime or frame time. If the framrate is slow then the ship is slow.
         float yOffset = yThrow * speed * Time.deltaTime;
 
         float rawXPos = transform.localPosition.x + xOffset;
