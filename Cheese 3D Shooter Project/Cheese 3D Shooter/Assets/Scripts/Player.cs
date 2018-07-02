@@ -21,8 +21,13 @@ public class Player : MonoBehaviour {
 	void Start () {
 
 	}
-	
-	void Update ()
+
+    void OnTriggerEnter(Collider other)
+    {
+        print("Player triggers something.");
+    }
+
+    void Update ()
     {
         ProcessTranslation();
         ProcessRotation();
