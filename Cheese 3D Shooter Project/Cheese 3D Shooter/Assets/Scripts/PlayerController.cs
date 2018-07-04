@@ -25,7 +25,7 @@ public class PlayerController : MonoBehaviour {
 
     void Update ()
     {
-        if (isControlEnabled = true)
+        if (isControlEnabled == true)
         {
         ProcessTranslation();
         ProcessRotation();
