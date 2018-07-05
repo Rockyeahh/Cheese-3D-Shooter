@@ -6,6 +6,8 @@ using UnityStandardAssets.CrossPlatformInput;
 
 public class PlayerController : MonoBehaviour {
 
+    // TODO: Work-out why sometimes slow on the first play of the scene/level 1.
+
     [Header("General")]
     [Tooltip("In ms^-1")] [SerializeField] float controlSpeed = 20f; // Does the same as public but he likes using it throughout the 2.0 course. Set to 4f as a default.
                                                               // I don't know what ms^-1 means but I think it's a shorthand for the calculaion that we have done.
