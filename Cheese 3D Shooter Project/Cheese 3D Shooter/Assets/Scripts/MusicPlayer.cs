@@ -4,16 +4,17 @@ using UnityEngine;
 
 public class MusicPlayer : MonoBehaviour {
 
-    void Awake()
+    private void Awake()
     {
-        DontDestroyOnLoad(this.gameObject); // Will need a if this doesn't exist then don't destroy on load, otherwise you don't need to keep this from destrouction as it'll be replaced.
+        int numMusicPlayers = FindObjectsOfType<MusicPlayer>().Length;
+        if (numMusicPlayers > 1)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            DontDestroyOnLoad(this.gameObject);
+        }
     }
 
-    void Start () {
-        
-    }
-	
-	void Update () {
-		
-	}
 }

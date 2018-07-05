@@ -823,11 +823,6 @@ Transform:
   m_Father: {fileID: 1433424514}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &2074872575 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1553241604611400, guid: 75b76a46db8af43468ada71a53e0dd68,
-    type: 2}
-  m_PrefabInternal: {fileID: 2115722340}
 --- !u!1001 &2115722340
 Prefab:
   m_ObjectHideFlags: 0
@@ -871,15 +866,6 @@ Prefab:
       propertyPath: m_Name
       value: Player Ship
       objectReference: {fileID: 0}
-    - target: {fileID: 1553241604611400, guid: 75b76a46db8af43468ada71a53e0dd68, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114251869418042050, guid: 75b76a46db8af43468ada71a53e0dd68,
-        type: 2}
-      propertyPath: deathFX
-      value: 
-      objectReference: {fileID: 2074872575}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 75b76a46db8af43468ada71a53e0dd68, type: 2}
   m_IsPrefabParent: 0
