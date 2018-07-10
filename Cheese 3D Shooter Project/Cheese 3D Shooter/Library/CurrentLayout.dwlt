@@ -20,7 +20,7 @@ MonoBehaviour:
   m_ShowMode: 4
   m_Title: 
   m_RootView: {fileID: 2}
-  m_MinSize: {x: 950, y: 300}
+  m_MinSize: {x: 950, y: 521}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &2
 MonoBehaviour:
@@ -106,10 +106,10 @@ MonoBehaviour:
     y: 30
     width: 1536
     height: 731
-  m_MinSize: {x: 583, y: 492}
+  m_MinSize: {x: 581, y: 471}
   m_MaxSize: {x: 14004, y: 14042}
   vertical: 0
-  controlID: 60
+  controlID: 1728
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -130,10 +130,10 @@ MonoBehaviour:
     y: 0
     width: 1102
     height: 731
-  m_MinSize: {x: 306, y: 492}
+  m_MinSize: {x: 304, y: 471}
   m_MaxSize: {x: 10002, y: 14042}
   vertical: 1
-  controlID: 27
+  controlID: 1626
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -154,10 +154,10 @@ MonoBehaviour:
     y: 0
     width: 1102
     height: 419
-  m_MinSize: {x: 306, y: 221}
-  m_MaxSize: {x: 8006, y: 4021}
+  m_MinSize: {x: 304, y: 200}
+  m_MaxSize: {x: 8004, y: 4021}
   vertical: 0
-  controlID: 75
+  controlID: 1627
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -176,8 +176,8 @@ MonoBehaviour:
     y: 0
     width: 313
     height: 419
-  m_MinSize: {x: 202, y: 221}
-  m_MaxSize: {x: 4002, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 13}
   m_Panes:
   - {fileID: 13}
@@ -366,21 +366,21 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 4cfbffff0000000096360000
+    m_ExpandedIDs: 465cffff14fbffff4cfbffff000000008036000096360000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: Ship_02
-      m_OriginalName: Ship_02
+      m_Name: 
+      m_OriginalName: 
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 13892
+      m_UserData: 0
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 0
+      m_OriginalEventType: 11
       m_IsRenamingFilename: 0
       m_ClientGUIView: {fileID: 8}
     m_SearchString: 
@@ -453,7 +453,7 @@ MonoBehaviour:
   m_Rotation:
     m_Target: {x: -0.00839194, y: -0.9916331, z: 0.097886294, w: -0.08441052}
     speed: 2
-    m_Value: {x: -0.008391464, y: -0.99157685, z: 0.09788074, w: -0.08440573}
+    m_Value: {x: 0.00839194, y: 0.9916332, z: -0.0978863, w: 0.08441052}
   m_Size:
     m_Target: 21.233507
     speed: 2
@@ -506,11 +506,11 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets/generic space enemy/Prefab/Module
+    - Assets
   m_ViewMode: 1
   m_StartGridSize: 70
   m_LastFolders:
-  - Assets/generic space enemy/Prefab/Module
+  - Assets
   m_LastFoldersGridSize: 70
   m_LastProjectPath: G:\Learn To Code With Unity Course 2.0\Learn To Code With Unity
     projects\Section 4\Unity-Course-Section-4-Argon-Assault\Argon Assault\Cheese 3D
@@ -518,9 +518,9 @@ MonoBehaviour:
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 46}
-    m_SelectedIDs: da350000
-    m_LastClickedID: 13786
+    scrollPos: {x: 0, y: 0}
+    m_SelectedIDs: 842b0000
+    m_LastClickedID: 11140
     m_ExpandedIDs: 00000000842b0000d22d0000de340000ffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -549,7 +549,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000842b0000d22d0000de340000
+    m_ExpandedIDs: 00000000842b0000d22d0000de340000ffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
