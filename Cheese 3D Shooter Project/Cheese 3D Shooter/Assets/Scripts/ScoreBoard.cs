@@ -15,7 +15,6 @@ public class ScoreBoard : MonoBehaviour {
 
     public void ScoreHit(int scoreIncrease)
     {
-        // Change A
         score = score + scoreIncrease;
         scoreText.text = score.ToString();
     }
