@@ -102,7 +102,7 @@ public class PlayerController : MonoBehaviour {
     {
         foreach (GameObject gun in guns)
         {
-            gun.SetActive(false);
+            gun.SetActive(false); // TODO: The particles vanish when the button is up. They should continue onwards and disappear naturally.
         }
     }
 }
