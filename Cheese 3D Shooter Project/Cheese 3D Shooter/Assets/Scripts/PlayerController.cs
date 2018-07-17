@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour {
                                                               // I don't know what ms^-1 means but I think it's a shorthand for the calculaion that we have done.
     [Tooltip("In m")] [SerializeField] float xRange = 5f; // Ben's code
     [Tooltip("in m")] [SerializeField] float yRange = 4.5f; // Ben's code. // It should be between 0f and 9f. Maybe it should be a slider.
+    [SerializeField] GameObject[] guns; // It contains the two or more guns on the player ship.
 
     [Header("Screen-position Based")]
     [SerializeField] float positionPitchFactor = -5f; // Ben's code. The number is world units and this game they are meters.
@@ -31,6 +32,7 @@ public class PlayerController : MonoBehaviour {
         {
         ProcessTranslation();
         ProcessRotation();
+        ProcessFiring();
         }
 
     }
@@ -74,5 +76,33 @@ public class PlayerController : MonoBehaviour {
         //transform.localPosition = new Vector3(clampedXPos, clampedYPos, transform.localPosition.z); // Ben's code
         transform.localPosition = new Vector3(Mathf.Clamp(rawXPos, -xRange, xRange), transform.localPosition.y, transform.localPosition.z); // Moves the ship in x.
         transform.localPosition = new Vector3(transform.localPosition.x, Mathf.Clamp(rawYPos, -yRange, yRange), transform.localPosition.z); // Moves the ship in y.
+    }
+
+    void ProcessFiring()
+    {
+        if (CrossPlatformInputManager.GetButton("Fire"))
+        {
+            ActivateGuns();
+        }
+        else
+        {
+            DeactivateGuns();
+        }
+    }
+
+    void ActivateGuns()
+    {
+        foreach (GameObject gun in guns)
+        {
+            gun.SetActive(true);
+        }
+    }
+
+    void DeactivateGuns()
+    {
+        foreach (GameObject gun in guns)
+        {
+            gun.SetActive(false);
+        }
     }
 }
