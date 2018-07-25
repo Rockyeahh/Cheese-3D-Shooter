@@ -41,7 +41,7 @@ public class PlayerController : MonoBehaviour {
     {
         print("Stop the fucking movement");
         isControlEnabled = false; // It doesn't stop the camera movement, that wuld be stopped by setting controlSpeed to 0f.
-        
+        SetGunsActive(false);
     }
 
     private void ProcessRotation()
@@ -82,27 +82,20 @@ public class PlayerController : MonoBehaviour {
     {
         if (CrossPlatformInputManager.GetButton("Fire"))
         {
-            ActivateGuns();
+            SetGunsActive(true);
         }
         else
         {
-            DeactivateGuns();
+            SetGunsActive(false);
         }
     }
 
-    void ActivateGuns()
+    void SetGunsActive(bool isActive)
     {
         foreach (GameObject gun in guns)
         {
-            gun.SetActive(true);
-        }
-    }
-
-    void DeactivateGuns()
-    {
-        foreach (GameObject gun in guns)
-        {
-            gun.SetActive(false); // TODO: The particles vanish when the button is up. They should continue onwards and disappear naturally.
+            var emissionModule = gun.GetComponent<ParticleSystem>().emission;
+            emissionModule.enabled = isActive; // Why isActive? Why does this work? What does false and true have to do with it? Shouldn't they be here? Why does true fail in it's place.
         }
     }
 }
