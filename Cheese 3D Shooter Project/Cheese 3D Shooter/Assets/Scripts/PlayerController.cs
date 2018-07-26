@@ -39,7 +39,6 @@ public class PlayerController : MonoBehaviour {
 
     void OnPlayerDeath() // Called by a string reference.
     {
-        print("Stop the fucking movement");
         isControlEnabled = false; // It doesn't stop the camera movement, that wuld be stopped by setting controlSpeed to 0f.
         SetGunsActive(false);
     }
