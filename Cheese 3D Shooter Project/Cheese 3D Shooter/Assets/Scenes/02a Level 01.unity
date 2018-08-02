@@ -918,15 +918,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4301618257826614, guid: 5f0acb7fcf73f9b43beff0e0f19c45da, type: 2}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: -45
+      value: 176.2
       objectReference: {fileID: 0}
     - target: {fileID: 4301618257826614, guid: 5f0acb7fcf73f9b43beff0e0f19c45da, type: 2}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: -90
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4301618257826614, guid: 5f0acb7fcf73f9b43beff0e0f19c45da, type: 2}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 24.3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4301618257826614, guid: 5f0acb7fcf73f9b43beff0e0f19c45da, type: 2}
       propertyPath: m_LocalScale.y
@@ -934,6 +934,10 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4301618257826614, guid: 5f0acb7fcf73f9b43beff0e0f19c45da, type: 2}
       propertyPath: m_LocalScale.z
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 4301618257826614, guid: 5f0acb7fcf73f9b43beff0e0f19c45da, type: 2}
+      propertyPath: m_LocalScale.x
       value: 20
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -2484,7 +2488,7 @@ PlayableDirector:
   - key: {fileID: 0}
     value: {fileID: 317788474}
   - key: {fileID: 114586761966646480, guid: 90bbe06ed7f9bd247ba969fb9bc8441b, type: 2}
-    value: {fileID: 0}
+    value: {fileID: 317788474}
   m_ExposedReferences:
     m_References: []
 --- !u!4 &1282509704 stripped
