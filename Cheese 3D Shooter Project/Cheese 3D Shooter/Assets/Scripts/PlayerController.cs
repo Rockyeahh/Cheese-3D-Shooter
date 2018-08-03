@@ -6,8 +6,6 @@ using UnityStandardAssets.CrossPlatformInput;
 
 public class PlayerController : MonoBehaviour {
 
-    // TODO: Work-out why sometimes slow on the first play of the scene/level 1.
-
     [Header("General")]
     [Tooltip("In ms^-1")] [SerializeField] float controlSpeed = 20f; // Does the same as public but he likes using it throughout the 2.0 course. Set to 4f as a default.
                                                               // I don't know what ms^-1 means but I think it's a shorthand for the calculaion that we have done.
@@ -25,6 +23,8 @@ public class PlayerController : MonoBehaviour {
 
     float xThrow, yThrow;
     bool isControlEnabled = true;
+
+    AudioSource audioSource;
 
     void Update ()
     {
@@ -82,11 +82,28 @@ public class PlayerController : MonoBehaviour {
         if (CrossPlatformInputManager.GetButton("Fire"))
         {
             SetGunsActive(true);
+            StartFiringSFX();
         }
         else
         {
             SetGunsActive(false);
+            StopFiringSFX();
         }
+    }
+
+    private void StartFiringSFX()
+    {
+        audioSource = GetComponent<AudioSource>();
+        if (!audioSource.isPlaying)
+        {
+            audioSource.Play();
+        }
+    }
+
+    private void StopFiringSFX()
+    {
+        audioSource = GetComponent<AudioSource>();
+        audioSource.Stop();
     }
 
     void SetGunsActive(bool isActive)
