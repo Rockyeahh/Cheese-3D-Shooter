@@ -26,6 +26,11 @@ public class PlayerController : MonoBehaviour {
 
     AudioSource audioSource;
 
+    private void Start()
+    {
+        Cursor.visible = false;
+    }
+
     void Update ()
     {
         if (isControlEnabled == true)
@@ -39,8 +44,9 @@ public class PlayerController : MonoBehaviour {
 
     void OnPlayerDeath() // Called by a string reference.
     {
-        isControlEnabled = false; // It doesn't stop the camera movement, that wuld be stopped by setting controlSpeed to 0f.
+        isControlEnabled = false; // It doesn't stop the camera movement, that is stopped in Collision Handler. It probably needs to be moved.
         SetGunsActive(false);
+        Cursor.visible = true;
     }
 
     private void ProcessRotation()
